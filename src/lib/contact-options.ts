@@ -1,10 +1,10 @@
 export const contactServices = [
-  "Software a medida",
-  "Plataforma SaaS",
-  "Automatización e integraciones",
-  "Cloud, DevOps e infraestructura",
-  "Datos, BI e inteligencia operacional",
-  "Consultoría tecnológica",
+  "Centralizar la operación de mi empresa",
+  "Automatizar procesos y tareas",
+  "Crear una plataforma o producto digital",
+  "Mejorar reportes y toma de decisiones",
+  "Modernizar un sistema existente",
+  "Necesito orientación",
 ] as const;
 
 export const contactTimelines = [
