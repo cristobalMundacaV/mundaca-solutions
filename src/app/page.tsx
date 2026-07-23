@@ -85,7 +85,7 @@ const projects = [
     impact: "De reportes aislados a una gestión ambiental continua.",
     tags: ["CO₂e", "Trazabilidad", "Alertas", "Sensores"],
     logo: "/logos/carbono-zero/logo-carbono-zero.png",
-    href: "https://github.com/cristobalMundacaV/proyecto-huella",
+    href: "https://carbonozero.mundacasolutions.com/",
     tone: "carbon",
   },
   {
