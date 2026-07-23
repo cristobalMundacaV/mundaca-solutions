@@ -56,7 +56,7 @@ export function ContactForm() {
       }
 
       setStatus("success");
-      setFeedback("Solicitud recibida. Te contactaremos para coordinar una conversación estratégica.");
+      setFeedback("Solicitud recibida. Revisaremos tu caso antes de contactarte para que la conversación sea útil desde el primer minuto.");
       setForm(initialForm);
     } catch (error) {
       setStatus("error");
@@ -129,7 +129,7 @@ export function ContactForm() {
         </label>
 
         <label className="field">
-          <span>Servicio de interés</span>
+          <span>¿Qué necesitas mejorar?</span>
           <select value={form.service} onChange={(event) => update("service", event.target.value as typeof form.service)}>
             {contactServices.map((service) => <option key={service}>{service}</option>)}
           </select>
@@ -144,11 +144,11 @@ export function ContactForm() {
       </div>
 
       <label className="field field-full">
-        <span>Cuéntanos el desafío</span>
+        <span>Cuéntanos qué está ocurriendo</span>
         <textarea
           value={form.message}
           onChange={(event) => update("message", event.target.value)}
-          placeholder="¿Qué proceso quieres mejorar, automatizar o transformar?"
+          placeholder="¿Qué proceso hoy les quita tiempo, genera errores o limita el crecimiento de la empresa?"
           rows={6}
           minLength={12}
           maxLength={3000}
@@ -193,10 +193,10 @@ export function ContactForm() {
       ) : null}
 
       <div className="form-submit-row">
-        <p>Respondemos personalmente. Sin bots, sin respuestas genéricas.</p>
-        <button className="button button-primary button-large" type="submit" disabled={status === "sending"}>
+        <p>Respondemos personalmente y revisamos cada solicitud antes de contactarte.</p>
+        <button className="ms-button ms-button-primary ms-button-large" type="submit" disabled={status === "sending"}>
           {status === "sending" ? <LoaderCircle className="spin" size={19} /> : <ArrowRight size={19} />}
-          {status === "sending" ? "Enviando solicitud" : "Solicitar reunión"}
+          {status === "sending" ? "Enviando solicitud" : "Solicitar evaluación"}
         </button>
       </div>
     </form>
