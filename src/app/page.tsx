@@ -14,7 +14,6 @@ import {
   Code2,
   Database,
   Gauge,
-  Github,
   Globe2,
   Layers3,
   Lightbulb,
@@ -717,7 +716,7 @@ export default function Home() {
           <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
           <span>Diseñado y construido con intención en Chile.</span>
           <a href="https://github.com/cristobalMundacaV" target="_blank" rel="noreferrer" aria-label="GitHub de Mundaca's Solutions">
-            <Github size={18} /> GitHub
+            <Code2  size={18} /> Code2 
           </a>
         </div>
       </footer>
