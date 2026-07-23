@@ -16,10 +16,17 @@
 .ms-project h3 { margin: 18px 0 16px; font-size: clamp(2.5rem,4vw,4.2rem); letter-spacing: -.06em; }.ms-project-copy > p { color: #c6d7e6; line-height: 1.7; }
 .ms-project-copy > strong { margin-top: 20px; display: flex; gap: 8px; align-items: flex-start; font-size: .82rem; line-height: 1.5; }.ms-project-copy > strong svg { flex: none; color: var(--ms-cyan); }
 .ms-project-copy > div { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 7px; }.ms-project-copy > div span { padding: 6px 10px; color: #dce8f2; border: 1px solid rgba(255,255,255,.17); border-radius: 999px; background: rgba(255,255,255,.06); font-size: .65rem; font-weight: 750; }
-.ms-project-visual { min-height: 270px; padding: 28px; position: relative; display: flex; align-items: end; border: 1px solid rgba(255,255,255,.16); border-radius: 22px; background: rgba(255,255,255,.07); background-image: linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px); background-size: 48px 48px; }
-.ms-project-icon { position: absolute; top: 22px; right: 22px; width: 54px; height: 54px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.17); border-radius: 16px; background: rgba(255,255,255,.09); }
-.ms-project-visual > div { width: 86%; padding: 22px; border-radius: 17px; background: rgba(5,20,37,.78); box-shadow: 0 20px 42px rgba(0,0,0,.2); }.ms-project-visual small { color: #7895af; font-size: .6rem; font-weight: 850; letter-spacing: .1em; }.ms-project-visual strong { margin-top: 7px; display: block; }
-.ms-mini-bars { height: 75px; margin-top: 18px; display: flex; align-items: end; gap: 8px; }.ms-mini-bars i { flex: 1; height: 34%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#58dff7,#4e78ff); }.ms-mini-bars i:nth-child(2){height:52%}.ms-mini-bars i:nth-child(3){height:45%}.ms-mini-bars i:nth-child(4){height:69%}.ms-mini-bars i:nth-child(5){height:84%}
+.ms-project-visual { min-height: 270px; padding: 22px; position: relative; display: grid; place-items: stretch; border: 1px solid rgba(255,255,255,.16); border-radius: 22px; background: rgba(255,255,255,.07); background-image: linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px); background-size: 48px 48px; }
+.ms-project-logo-link { min-height: 226px; padding: 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; color: #18304a; border: 1px solid rgba(255,255,255,.7); border-radius: 18px; background: linear-gradient(145deg,rgba(255,255,255,.98),rgba(239,244,250,.96)); box-shadow: 0 22px 50px rgba(0,0,0,.2); transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease; }
+.ms-project-logo-link:hover { transform: translateY(-5px); border-color: #fff; box-shadow: 0 30px 65px rgba(0,0,0,.26); }
+.ms-project-logo-link:focus-visible { outline: 3px solid #8fe9ff; outline-offset: 4px; }
+.ms-project-logo { width: min(86%,360px); height: auto; max-height: 150px; object-fit: contain; }
+.ms-project-logo.foodies { width: min(72%,290px); }
+.ms-project-logo.carbon { width: min(88%,370px); }
+.ms-project-logo.motos { width: min(92%,390px); max-height: 145px; }
+.ms-project-logo-link > span { display: inline-flex; align-items: center; gap: 8px; color: #285fca; font-size: .77rem; font-weight: 850; }
+.ms-project-logo-link > span svg { transition: transform .2s ease; }
+.ms-project-logo-link:hover > span svg { transform: translateX(4px); }
 
 .ms-method { background: #fff; }
 .ms-method-layout { display: grid; grid-template-columns: .82fr 1.18fr; gap: 85px; align-items: start; }
