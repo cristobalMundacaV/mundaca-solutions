@@ -3,6 +3,10 @@ import { Inter, Manrope } from "next/font/google";
 import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 import "./landing-saas.css";
+import "./landing-saas-2.css";
+import "./landing-saas-3.css";
+import "./landing-saas-4.css";
+import "./landing-saas-5.css";
 
 const inter = Inter({
   subsets: ["latin"],

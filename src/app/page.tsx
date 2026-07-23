@@ -44,7 +44,7 @@ const solutions = [
   {
     icon: Layers3,
     title: "Centraliza tu operación",
-    text: "Reúne procesos, equipos e información en un sistema disiñado alrededor de cómo funciona tu empresa.",
+    text: "Reúne procesos, equipos e información en un sistema diseñado alrededor de cómo funciona tu empresa.",
     bullets: ["Menos herramientas aisladas", "Información en un solo lugar", "Control operacional"],
   },
   {
