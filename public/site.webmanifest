@@ -1,0 +1,24 @@
+{
+  "name": "Mundaca's Solutions",
+  "short_name": "Mundaca's",
+  "description": "Software, automatización e infraestructura digital para empresas que quieren avanzar.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06101f",
+  "theme_color": "#071425",
+  "lang": "es-CL",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

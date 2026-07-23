@@ -1,0 +1,35 @@
+{
+  "name": "mundaca-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "npm@10.9.8",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build",
+    "preflight": "node scripts/preflight.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "12.42.2",
+    "lucide-react": "1.25.0",
+    "next": "16.2.10",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "resend": "6.12.4",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.32",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.2.10",
+    "typescript": "5.9.3"
+  }
+}

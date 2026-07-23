@@ -1,0 +1,18 @@
+<svg width="390" height="82" viewBox="0 0 390 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a" x1="8" y1="9" x2="73" y2="74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39D7FF"/>
+      <stop offset="0.5" stop-color="#4888FF"/>
+      <stop offset="1" stop-color="#7C5CFF"/>
+    </linearGradient>
+    <linearGradient id="b" x1="20" y1="20" x2="62" y2="63" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset="1" stop-color="#C9E7FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="76" height="76" rx="22" fill="#071425" stroke="url(#a)" stroke-width="3"/>
+  <path d="M20 58V24L41 45L62 24V58" stroke="url(#b)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 62H58" stroke="url(#a)" stroke-width="4" stroke-linecap="round"/>
+  <text x="96" y="40" fill="white" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="800" letter-spacing="-0.8">Mundaca's</text>
+  <text x="97" y="61" fill="#9CB4D2" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4.5">SOLUTIONS</text>
+</svg>
