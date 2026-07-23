@@ -3,7 +3,8 @@
 .ms-dashboard-top i { width: 7px; height: 7px; border-radius: 50%; background: #31d49b; box-shadow: 0 0 12px #31d49b; }
 .ms-dashboard-main { min-height: 395px; display: grid; grid-template-columns: 116px 1fr; }
 .ms-dashboard aside { padding: 20px 13px; display: flex; flex-direction: column; gap: 9px; border-right: 1px solid rgba(135,180,234,.12); }
-.ms-dashboard aside b { width: 38px; height: 38px; margin-bottom: 12px; display: grid; place-items: center; border: 1px solid rgba(78,163,255,.35); border-radius: 12px; background: rgba(61,119,209,.18); }
+.ms-dashboard-brand { min-height: 44px; margin-bottom: 12px; padding: 8px; display: grid; place-items: center; border: 1px solid rgba(78,163,255,.28); border-radius: 12px; background: rgba(61,119,209,.12); overflow: hidden; }
+.ms-dashboard-brand img { width: 100%; height: auto; max-height: 27px; object-fit: contain; }
 .ms-dashboard aside span { padding: 9px; display: flex; align-items: center; gap: 7px; color: #8ea7c2; border-radius: 9px; font-size: .67rem; font-weight: 750; }
 .ms-dashboard aside .active { color: #fff; background: rgba(59,123,224,.2); }
 .ms-dashboard-content { padding: 24px 22px 20px; }
