@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Mundaca's Solutions",
   },
   description:
-    "Construimos productos y sistemas que conectan operación, datos e inteligencia para automatizar procesos, resolver problemas reales y mejorar decisiones.",
+    "Mundaca's Solutions diseña productos y software a medida que conectan operación, datos e inteligencia para automatizar procesos, aumentar el control y mejorar decisiones.",
   applicationName: "Mundaca's Solutions",
   authors: [{ name: "Mundaca's Solutions SpA" }],
   creator: "Mundaca's Solutions SpA",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mundaca's Solutions | Software, datos e inteligencia operacional",
     description:
-      "Construimos productos y sistemas que conectan operación, datos e inteligencia para automatizar procesos, resolver problemas reales y mejorar decisiones.",
+      "Mundaca's Solutions diseña productos y software a medida que conectan operación, datos e inteligencia para automatizar procesos, aumentar el control y mejorar decisiones.",
     url: siteUrl,
     siteName: "Mundaca's Solutions",
     locale: "es_CL",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Mundaca's Solutions",
-    description: "Software, datos e inteligencia operacional para conectar procesos y mejorar decisiones.",
+    description: "Mundaca's Solutions diseña productos y software a medida que conectan operación, datos e inteligencia para automatizar procesos, aumentar el control y mejorar decisiones.",
     images: ["/og-image.png"],
   },
   robots: {

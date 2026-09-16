@@ -53,11 +53,11 @@ El comando ejecuta lint, typecheck y build de producción.
 ```env
 NEXT_PUBLIC_SITE_URL=https://mundacasolutions.com
 NEXT_PUBLIC_BOOKING_URL=
-NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/56966635509?text=Hola%20Crist%C3%B3bal%2C%20quiero%20conversar%20sobre%20un%20proyecto%20para%20mi%20empresa.
-NEXT_PUBLIC_CONTACT_EMAIL=cristobal.mundacav@gmail.com
+NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/56966635509?text=Hola%2C%20quiero%20conversar%20con%20Mundaca%27s%20Solutions%20sobre%20una%20necesidad%20de%20mi%20empresa.
+NEXT_PUBLIC_CONTACT_EMAIL=contacto@mundacasolutions.com
 
 RESEND_API_KEY=
-CONTACT_TO_EMAIL=cristobal.mundacav@gmail.com
+CONTACT_TO_EMAIL=contacto@mundacasolutions.com
 CONTACT_FROM_EMAIL=Mundaca's Solutions <contacto@mundacasolutions.com>
 
 SUPABASE_URL=

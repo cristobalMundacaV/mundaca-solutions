@@ -27,8 +27,8 @@ import { ContactForm } from "@/components/ContactForm";
 const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "#contacto";
 const whatsappUrl =
   process.env.NEXT_PUBLIC_WHATSAPP_URL ||
-  "https://wa.me/56966635509?text=Hola%20Crist%C3%B3bal%2C%20quiero%20conversar%20sobre%20un%20proyecto%20para%20mi%20empresa.";
-const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "cristobal.mundacav@gmail.com";
+  "https://wa.me/56966635509?text=Hola%2C%20quiero%20conversar%20con%20Mundaca%27s%20Solutions%20sobre%20una%20necesidad%20de%20mi%20empresa.";
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contacto@mundacasolutions.com";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mundacasolutions.com";
 const brandLogo = "/logos/mundaca-solutions/logo-mundacas-solutions.png";
 
@@ -36,8 +36,8 @@ const products = [
   {
     name: "Carbono Zero",
     category: "Inteligencia para construcción",
-    text: "Conecta diseño, planificación, materiales, costos, ejecución y desempeño ambiental para entender el proyecto como un solo sistema.",
-    impact: "De reportes aislados a una gestión ambiental continua.",
+    text: "Conecta diseño, planificación, materiales, ejecución y desempeño ambiental para entender el proyecto como un sistema y anticipar mejor sus consecuencias.",
+    impact: "Del dato fragmentado a una visión conectada del proyecto.",
     tags: ["Diseño", "Planificación", "CO₂e", "Trazabilidad"],
     logo: "/logos/carbono-zero/logo-carbono-zero.png",
     href: "https://carbonozero.mundacasolutions.com",
@@ -47,8 +47,8 @@ const products = [
   {
     name: "Foodies",
     category: "Operación e inteligencia para negocios",
-    text: "Conecta ventas, caja, inventario y operación para ayudar al negocio a entender qué está pasando y decidir qué hacer después.",
-    impact: "De procesos separados a una gestión visible y coordinada.",
+    text: "Conecta ventas, caja, inventario y operación para dar al negocio una fuente de verdad clara, detectar lo que requiere atención y decidir con más contexto.",
+    impact: "De procesos separados a una operación conectada y visible.",
     tags: ["Ventas", "Caja", "Inventario", "Reportes"],
     logo: "/logos/foodies/logo-foodies.png",
     href: "https://foodies.mundacasolutions.com",
@@ -57,49 +57,64 @@ const products = [
   },
 ] as const;
 
-const cafetalFlow = ["Cliente", "Pedido", "Menú", "Preparación", "Despacho", "Pago / Cuenta", "Caja", "Reportes"] as const;
-const cafetalTags = ["Pedidos", "Despacho", "Clientes", "Cuentas", "Caja", "Reportes"] as const;
+const cafetalStages = [
+  {
+    index: "01",
+    title: "Solicitud",
+    items: ["Cliente", "Pedido", "Menú"],
+  },
+  {
+    index: "02",
+    title: "Ejecución",
+    items: ["Preparación", "Despacho"],
+  },
+  {
+    index: "03",
+    title: "Cierre y control",
+    items: ["Pago / Cuenta", "Caja", "Reportes"],
+  },
+] as const;
 const thesisFlow = ["Problema", "Operación", "Datos", "Contexto", "Inteligencia", "Decisión", "Acción", "Resultado"] as const;
 
 const problems = [
-  [Layers3, "Información repartida", "Unificamos lo que hoy vive en planillas, mensajes y sistemas separados."],
-  [Workflow, "Trabajo manual repetitivo", "Automatizamos tareas que consumen tiempo y generan errores evitables."],
-  [BarChart3, "Decisiones sin contexto", "Convertimos datos dispersos en indicadores que muestran dónde actuar."],
-  [Boxes, "Software que no encaja", "Diseñamos alrededor de tu operación, no de una plantilla genérica."],
+  [Layers3, "Información fragmentada", "Conectamos información que hoy vive entre planillas, mensajes y herramientas aisladas."],
+  [Workflow, "Operación demasiado manual", "Automatizamos tareas repetitivas y puntos de traspaso que consumen tiempo y amplifican errores."],
+  [BarChart3, "Datos sin contexto", "Convertimos registros dispersos en información útil para detectar desviaciones y decidir dónde actuar."],
+  [Boxes, "Herramientas que no encajan", "Diseñamos alrededor de tu operación cuando una solución genérica obliga a tu empresa a trabajar de una forma que no le corresponde."],
 ] as const;
 
 const solutions = [
   {
     icon: Layers3,
-    title: "Centraliza tu operación",
-    text: "Reúne procesos, equipos e información en un sistema diseñado alrededor de cómo funciona tu empresa.",
-    bullets: ["Menos herramientas aisladas", "Información en un solo lugar", "Control operacional"],
+    title: "Centraliza la operación",
+    text: "Conecta procesos, equipos e información en un sistema diseñado alrededor de cómo funciona realmente tu empresa.",
+    bullets: ["Procesos conectados", "Información centralizada", "Control operacional"],
   },
   {
     icon: Zap,
-    title: "Automatiza el trabajo repetitivo",
-    text: "Conecta tareas y servicios para reducir carga manual, tiempos de espera y errores que cuestan dinero.",
-    bullets: ["Flujos automáticos", "Alertas relevantes", "Integraciones"],
+    title: "Automatiza lo repetitivo",
+    text: "Reduce tareas manuales, traspasos innecesarios y puntos donde hoy se pierde tiempo o se multiplican errores.",
+    bullets: ["Flujos automatizados", "Alertas relevantes", "Integraciones"],
   },
   {
     icon: Rocket,
-    title: "Construye un producto digital",
-    text: "Transforma una idea o servicio en una plataforma sólida, fácil de usar y preparada para crecer.",
+    title: "Convierte una necesidad en producto",
+    text: "Transformamos una idea, proceso o servicio en una plataforma sólida, usable y preparada para evolucionar.",
     bullets: ["Experiencia clara", "Roles y procesos", "Evolución por etapas"],
   },
   {
     icon: BarChart3,
-    title: "Decide con información clara",
-    text: "Convierte datos dispersos en indicadores útiles para detectar problemas, anticiparte y actuar mejor.",
-    bullets: ["Dashboards ejecutivos", "KPIs accionables", "Trazabilidad"],
+    title: "Convierte datos en decisiones",
+    text: "Estructura la información de la operación para detectar desviaciones, entender qué está ocurriendo y actuar con más contexto.",
+    bullets: ["KPIs accionables", "Visibilidad ejecutiva", "Trazabilidad"],
   },
 ];
 
 const method = [
-  [SearchCheck, "Entendemos la operación", "Revisamos el problema, los usuarios y el resultado esperado.", "Diagnóstico y prioridades"],
-  [Target, "Diseñamos una ruta clara", "Definimos alcance y etapas para invertir primero donde existe mayor impacto.", "Propuesta y roadmap"],
-  [Boxes, "Construimos y validamos", "Avanzamos por entregas visibles y ajustamos antes de aumentar la complejidad.", "Avances demostrables"],
-  [Rocket, "Lanzamos y acompañamos", "Ponemos la solución en producción y la evolucionamos junto al negocio.", "Mejora continua"],
+  [SearchCheck, "Entendemos la operación", "Levantamos el problema, los usuarios, los procesos y el resultado que la empresa necesita alcanzar.", "Diagnóstico y prioridades"],
+  [Target, "Diseñamos la solución", "Definimos alcance, arquitectura y una ruta de implementación enfocada primero en lo que genera más valor.", "Propuesta y plan de implementación"],
+  [Boxes, "Implementamos y validamos", "Construimos por etapas funcionales, validamos con la operación real y corregimos antes de aumentar complejidad.", "Avances funcionales y verificables"],
+  [Rocket, "Ponemos en marcha y acompañamos", "Configuramos la solución, preparamos a los usuarios y acompañamos el arranque hasta estabilizar la operación.", "Go-live y acompañamiento"],
 ] as const;
 
 const reveal = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
@@ -189,18 +204,29 @@ function HeroProof() {
   return (
     <div className="ms-proof" aria-hidden="true">
       <div className="ms-proof-top">
-        <span>Ecosistema Mundaca&apos;s Solutions</span>
+        <span>Productos propios</span>
       </div>
+      <div className="ms-proof-intro">Una misma forma de construir software</div>
       <div className="ms-proof-products">
-        <div className="ms-proof-card carbon">
-          <Image src="/logos/carbono-zero/logo-carbono-zero.png" alt="" width={230} height={96} />
-          <strong>Carbono Zero</strong>
-          <small>Inteligencia para construcción</small>
+        <div className="ms-proof-item">
+          <div className="ms-proof-logo-well">
+            <Image src="/logos/carbono-zero/logo-carbono-zero.png" alt="" width={270} height={110} />
+          </div>
+          <div className="ms-proof-meta">
+            <strong>Carbono Zero</strong>
+            <span>Inteligencia para construcción</span>
+            <small>Proyecto · Datos · Desempeño</small>
+          </div>
         </div>
-        <div className="ms-proof-card foodies">
-          <Image src="/logos/foodies/logo-foodies.png" alt="" width={230} height={96} />
-          <strong>Foodies</strong>
-          <small>Operación e inteligencia para negocios</small>
+        <div className="ms-proof-item">
+          <div className="ms-proof-logo-well">
+            <Image src="/logos/foodies/logo-foodies.png" alt="" width={220} height={92} />
+          </div>
+          <div className="ms-proof-meta">
+            <strong>Foodies</strong>
+            <span>Operación e inteligencia para negocios</span>
+            <small>Ventas · Inventario · Gestión</small>
+          </div>
         </div>
       </div>
       <div className="ms-proof-flow">
@@ -240,7 +266,7 @@ export default function Home() {
         telephone: "+56 9 6663 5509",
         areaServed: "Chile",
         description:
-          "Diseño y desarrollo de sistemas y software a medida para conectar procesos, automatizar operaciones y convertir datos en decisiones.",
+            "Diseño y desarrollo de productos y software a medida que conectan operación, datos e inteligencia para automatizar procesos, aumentar el control y mejorar decisiones.",
       },
     ],
   };
@@ -268,19 +294,17 @@ export default function Home() {
                 <Sparkles size={15} /> SOFTWARE · DATOS · INTELIGENCIA OPERACIONAL
               </motion.div>
               <motion.h1 variants={reveal}>
-                Convertimos operaciones complejas en <span>sistemas que ayudan a decidir mejor.</span>
+                Convertimos operaciones complejas en <span className="ms-hero-highlight">sistemas para operar y decidir mejor.</span>
               </motion.h1>
               <motion.p variants={reveal}>
-                En Mundaca&apos;s Solutions diseñamos productos y software que conectan procesos, datos e
-                inteligencia para resolver problemas reales, automatizar operaciones y convertir información
-                en mejores decisiones.
+                Diseñamos productos y software a medida que conectan procesos, datos e inteligencia. Menos fricción operativa, más control y mejores decisiones.
               </motion.p>
               <motion.div className="ms-hero-actions" variants={reveal}>
                 <a className="ms-button ms-button-primary" href={bookingUrl}>
                   Conversemos sobre tu operación <ArrowRight size={19} />
                 </a>
                 <a className="ms-button ms-button-ghost" href="#productos">
-                  Conocer nuestros productos <ChevronRight size={19} />
+                  Explorar nuestros productos <ChevronRight size={19} />
                 </a>
               </motion.div>
               <motion.div className="ms-trust" variants={reveal}>
@@ -297,8 +321,8 @@ export default function Home() {
         <section className="ms-evidence">
           <div className="ms-container ms-evidence-inner">
             <div>
-              <strong>Soluciones construidas sobre problemas reales</strong>
-              <span>Productos y sistemas desarrollados por Mundaca&apos;s Solutions</span>
+              <strong>Productos propios, construidos sobre problemas reales</strong>
+              <span>Carbono Zero y Foodies aplican el mismo principio en operaciones diferentes.</span>
             </div>
             <nav>
               <a href="#productos"><b>Carbono Zero</b><span>Inteligencia para construcción</span></a>
@@ -310,12 +334,12 @@ export default function Home() {
         <section className="ms-section ms-projects" id="productos">
           <div className="ms-container">
             <Reveal className="ms-heading">
-              <div className="ms-eyebrow">PRODUCTOS</div>
-              <h2>Dos productos, un mismo principio: entender la operación como un sistema.</h2>
+              <div className="ms-eyebrow">PRODUCTOS PROPIOS</div>
+              <h2>Dos productos. Un mismo estándar.</h2>
               <p>
-                Construimos software que conecta operación, datos e inteligencia para resolver problemas
-                reales y mejorar decisiones. Carbono Zero y Foodies son la prueba de ese principio aplicado
-                a dos industrias distintas.
+                Carbono Zero y Foodies nacen de la misma forma de entender el software: conectar la operación,
+                ordenar los datos y convertirlos en contexto útil para decidir. Aplicamos ese principio a problemas
+                distintos, sin perder profundidad en cada industria.
               </p>
             </Reveal>
 
@@ -361,40 +385,39 @@ export default function Home() {
         <section className="ms-section ms-case" id="cafetal">
           <div className="ms-container">
             <Reveal className="ms-heading centered">
-              <div className="ms-eyebrow">CASO DE APLICACIÓN — CAFETAL</div>
-              <h2>Una operación real convertida en un sistema conectado.</h2>
+              <div className="ms-eyebrow">CASO REAL · CAFETAL</div>
+              <h2>Una operación completa, conectada de principio a fin.</h2>
               <p>
-                Foodies se adapta al flujo de Cafetal para centralizar clientes, pedidos, menús, despacho,
-                cuentas, pagos, caja e información de gestión en una sola operación.
+                Foodies se configuró alrededor del flujo real de Cafetal para reunir clientes, pedidos,
+                preparación, despacho, cuentas, pagos, caja e información de gestión en una sola operación trazable.
               </p>
             </Reveal>
 
             <Reveal className="ms-case-card">
               <div className="ms-case-meta">
-                <span className="ms-case-tag">Operación de alimentación</span>
+                <span className="ms-case-tag">IMPLEMENTACIÓN ESPECIALIZADA</span>
                 <span className="ms-case-product"><Sparkles size={14} /> Construido sobre Foodies</span>
               </div>
 
-              <div className="ms-case-flow">
-                {cafetalFlow.map((step, index) => (
-                  <div className="ms-case-flow-step" key={step}>
-                    <span>{step}</span>
-                    {index < cafetalFlow.length - 1 ? <ChevronRight size={15} /> : null}
+              <div className="ms-case-stages">
+                {cafetalStages.map(({ index, title, items }) => (
+                  <div className="ms-case-stage" key={title}>
+                    <span className="ms-case-stage-index">{index}</span>
+                    <h3>{title}</h3>
+                    <ul>
+                      {items.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
                   </div>
                 ))}
               </div>
 
-              <div className="ms-case-tags">
-                {cafetalTags.map((tag) => <span key={tag}>{tag}</span>)}
-              </div>
-
               <div className="ms-case-impact">
                 <Check size={16} />
-                <span>De procesos distribuidos a una operación trazable desde la solicitud hasta el cierre.</span>
+                <span>Una sola operación trazable desde la solicitud hasta el cierre.</span>
               </div>
 
               <a className="ms-button ms-button-primary" href="https://foodies.mundacasolutions.com" target="_blank" rel="noreferrer">
-                Ver cómo adaptamos Foodies <ArrowRight size={18} />
+                Conocer Foodies <ArrowRight size={18} />
               </a>
             </Reveal>
           </div>
@@ -418,8 +441,8 @@ export default function Home() {
 
             <Reveal className="ms-thesis-note" delay={0.1}>
               <p>
-                Este es el mismo principio detrás de nuestros productos y de los sistemas que construimos
-                para otras organizaciones.
+                Es el principio detrás de cada producto y cada solución que construimos: comprender primero,
+                estructurar después y usar tecnología sólo donde realmente mejora la operación.
               </p>
             </Reveal>
           </div>
@@ -432,10 +455,10 @@ export default function Home() {
             </Reveal>
             <Reveal className="ms-ai-copy" delay={0.06}>
               <div className="ms-eyebrow">INTELIGENCIA ARTIFICIAL</div>
-              <h2>La inteligencia funciona mejor cuando entiende la realidad.</h2>
+              <h2>La inteligencia aporta cuando entiende el contexto.</h2>
               <p>
-                Por eso primero estructuramos procesos, datos, reglas y contexto. La inteligencia
-                artificial viene después: para explicar, relacionar, asistir y acelerar mejores decisiones.
+                Primero estructuramos procesos, datos y reglas. Después usamos inteligencia artificial para
+                explicar, relacionar y asistir decisiones sobre una realidad que el sistema ya comprende.
               </p>
             </Reveal>
           </div>
@@ -445,10 +468,10 @@ export default function Home() {
           <div className="ms-container">
             <Reveal className="ms-heading centered">
               <div className="ms-eyebrow">CUANDO LA OPERACIÓN CRECE</div>
-              <h2>La complejidad no debería frenar a tu empresa.</h2>
+              <h2>La complejidad no debería convertirse en descontrol.</h2>
               <p>
-                Cuando la información se reparte entre planillas, mensajes y sistemas que no conversan,
-                el equipo pierde tiempo y la dirección pierde visibilidad.
+                Cuando la información queda repartida entre personas, planillas, mensajes y herramientas que
+                no conversan, aumenta la fricción operativa y disminuye la capacidad de ver qué está ocurriendo.
               </p>
             </Reveal>
             <div className="ms-problem-grid">
@@ -463,7 +486,7 @@ export default function Home() {
               ))}
             </div>
             <Reveal className="ms-inline-cta">
-              <div><small>¿Te suena familiar?</small><strong>Cuéntanos qué está frenando tu operación.</strong></div>
+              <div><small>¿Te suena familiar?</small><strong>Cuéntanos dónde se está generando la fricción.</strong></div>
               <a href="#contacto">Revisar mi caso <ArrowRight size={18} /></a>
             </Reveal>
           </div>
@@ -474,12 +497,12 @@ export default function Home() {
             <Reveal className="ms-heading split light">
               <div>
                 <div className="ms-eyebrow light">DESARROLLO A MEDIDA</div>
-                <h2>Cuando las herramientas genéricas no alcanzan, diseñamos el sistema a tu medida.</h2>
+                <h2>Cuando lo genérico no alcanza, diseñamos a medida.</h2>
               </div>
               <p>
-                Sistemas operacionales, automatización, plataformas de datos e inteligencia operacional,
-                integraciones y herramientas internas: construimos alrededor de tu realidad, no de una
-                plantilla genérica.
+                Construimos sistemas operacionales, automatizaciones, plataformas de datos e integraciones
+                alrededor de la forma real de trabajar de tu empresa. El software se adapta a la operación,
+                no al revés.
               </p>
             </Reveal>
             <div className="ms-solution-grid">
@@ -496,11 +519,11 @@ export default function Home() {
             </div>
             <Reveal className="ms-solution-cta">
               <div>
-                <span>¿No sabes todavía qué solución necesitas?</span>
-                <strong>Si tu operación tiene un problema que las herramientas genéricas no resuelven, podemos diseñar el sistema alrededor de tu realidad.</strong>
+                <span>¿Tu problema no cabe en una solución estándar?</span>
+                <strong>Partimos por entenderlo. Después definimos qué conviene construir, integrar o automatizar.</strong>
               </div>
               <a className="ms-button ms-button-light" href="#contacto">
-                Revisar mi caso <ArrowRight size={18} />
+                Evaluar mi caso <ArrowRight size={18} />
               </a>
             </Reveal>
           </div>
@@ -511,7 +534,7 @@ export default function Home() {
             <Reveal className="ms-method-intro">
               <div className="ms-eyebrow">CÓMO TRABAJAMOS</div>
               <h2>Menos incertidumbre. Más visibilidad en cada etapa.</h2>
-              <p>Sabes qué se está resolviendo, por qué se tomó cada decisión y cuál es el siguiente avance.</p>
+              <p>Desde la primera conversación hasta la puesta en marcha, sabes qué estamos resolviendo, qué decisión se tomó y cuál es el siguiente paso.</p>
               <div className="ms-promise">
                 <ShieldCheck size={23} />
                 <span>
@@ -538,16 +561,16 @@ export default function Home() {
           <div className="ms-container ms-partner-layout">
             <Reveal>
               <div className="ms-eyebrow light">UN SOCIO TECNOLÓGICO</div>
-              <h2>Nos hacemos cargo de convertir el problema en una solución que funcione.</h2>
+              <h2>Nos hacemos cargo del camino completo: del problema a la puesta en marcha.</h2>
               <p>
-                No necesitas llegar con una especificación técnica. Nosotros ordenamos el camino,
-                cuidamos las decisiones y construimos con responsabilidad.
+                No necesitas llegar con una especificación técnica. Entendemos la operación, diseñamos la
+                solución, tomamos las decisiones técnicas necesarias y acompañamos su implementación.
               </p>
               <div className="ms-values">
-                <span><BriefcaseBusiness size={17} /><b>Visión de negocio</b><small>La tecnología responde a un objetivo real.</small></span>
-                <span><MessageCircle size={17} /><b>Comunicación directa</b><small>Conversaciones claras durante todo el proyecto.</small></span>
-                <span><ShieldCheck size={17} /><b>Responsabilidad técnica</b><small>Calidad y continuidad desde el diseño.</small></span>
-                <span><Rocket size={17} /><b>Evolución continua</b><small>La solución crece junto a tu empresa.</small></span>
+                <span><BriefcaseBusiness size={17} /><b>Visión de negocio</b><small>La tecnología responde a un problema y un resultado concreto.</small></span>
+                <span><MessageCircle size={17} /><b>Comunicación directa</b><small>Sabes qué estamos haciendo, por qué y qué sigue.</small></span>
+                <span><ShieldCheck size={17} /><b>Responsabilidad técnica</b><small>Diseñamos pensando en seguridad, continuidad y evolución.</small></span>
+                <span><Rocket size={17} /><b>Acompañamiento</b><small>La implementación no termina cuando entregamos el software.</small></span>
               </div>
             </Reveal>
             <Reveal className="ms-partner-card" delay={0.1}>
@@ -577,29 +600,31 @@ export default function Home() {
         <section className="ms-section ms-contact" id="contacto">
           <div className="ms-container ms-contact-layout">
             <Reveal className="ms-contact-copy">
-              <div className="ms-eyebrow light">HABLEMOS DE TU OPERACIÓN</div>
-              <h2>Todo gran sistema comienza entendiendo correctamente el problema.</h2>
+              <div className="ms-eyebrow light">PRIMER PASO · ENTENDER EL PROBLEMA</div>
+              <h2>Cuéntanos qué está frenando tu operación.</h2>
               <p>
-                Cuéntanos qué está ocurriendo en tu operación. Revisaremos el contexto antes de conversar
-                para que la primera reunión empiece donde realmente importa.
+                Antes de hablar de tecnología o precio, revisamos el contexto, la prioridad y la viabilidad.
+                Así la primera conversación empieza donde realmente importa.
               </p>
               <div className="ms-contact-points">
-                <span><Check size={16} /> Diagnóstico enfocado en tu realidad</span>
-                <span><Check size={16} /> Evaluación honesta de viabilidad</span>
-                <span><Check size={16} /> Próximos pasos claros</span>
+                <span><Check size={16} /> Diagnóstico enfocado en tu operación</span>
+                <span><Check size={16} /> Viabilidad y alcance honestos</span>
+                <span><Check size={16} /> Un próximo paso concreto</span>
               </div>
-              <a className="ms-button ms-button-light ms-cta-booking" href={bookingUrl}>
-                Agendar conversación <ArrowRight size={18} />
-              </a>
-              <a className="ms-direct" href={whatsappUrl} target="_blank" rel="noreferrer">
-                <MessageCircle size={22} />
-                <span><small>¿Prefieres conversar directamente?</small><strong>Estamos a un mensaje de distancia.</strong></span>
-                <ArrowRight size={17} />
-              </a>
+              <div className="ms-contact-actions">
+                <a className="ms-button ms-button-light ms-cta-booking" href={bookingUrl}>
+                  Agendar conversación <ArrowRight size={18} />
+                </a>
+                <a className="ms-direct" href={whatsappUrl} target="_blank" rel="noreferrer">
+                  <MessageCircle size={22} />
+                  <span><small>¿Prefieres escribirnos?</small><strong>Conversemos directamente por WhatsApp.</strong></span>
+                  <ArrowRight size={17} />
+                </a>
+              </div>
             </Reveal>
             <Reveal className="ms-form-shell" delay={0.1}>
               <div className="ms-form-head">
-                <span><b>01</b><strong>Evaluemos tu proyecto</strong></span>
+                <span><b>01</b><strong>Cuéntanos qué necesitas resolver</strong></span>
                 <small>Respuesta personal</small>
               </div>
               <ContactForm />
@@ -614,7 +639,7 @@ export default function Home() {
             <a className="ms-brand" href="#inicio">
               <Image src={brandLogo} alt="Mundaca's Solutions" width={390} height={82} />
             </a>
-            <p>Software, datos e inteligencia operacional para empresas que necesitan operar con más claridad, control y capacidad de crecer.</p>
+            <p>Productos y software a medida para empresas que necesitan operar con más control, conectar mejor su información y tomar decisiones con contexto.</p>
           </div>
           <nav>
             <strong>Explorar</strong>

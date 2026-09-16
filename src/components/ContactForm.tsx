@@ -129,7 +129,7 @@ export function ContactForm() {
         </label>
 
         <label className="field">
-          <span>¿Qué necesitas mejorar?</span>
+          <span>¿Qué quieres resolver?</span>
           <select value={form.service} onChange={(event) => update("service", event.target.value as typeof form.service)}>
             {contactServices.map((service) => <option key={service}>{service}</option>)}
           </select>

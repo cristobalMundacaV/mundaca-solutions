@@ -19,7 +19,7 @@
 .ms-heading { max-width: 760px; margin-bottom: 50px; }
 .ms-heading.centered { margin-inline: auto; text-align: center; }
 .ms-heading.split { max-width: none; display: grid; grid-template-columns: 1.15fr .7fr; gap: 90px; align-items: end; }
-.ms-heading h2, .ms-method-intro h2, .ms-partner h2, .ms-contact h2 { margin: 16px 0 0; font-size: clamp(2.25rem, 4.2vw, 4.2rem); line-height: 1.04; letter-spacing: -.055em; }
+.ms-heading h2, .ms-method-intro h2, .ms-partner h2, .ms-contact h2 { margin: 16px 0 0; font-size: clamp(2.2rem, 3.35vw, 3.55rem); line-height: 1.04; letter-spacing: -.055em; }
 .ms-heading p, .ms-method-intro > p, .ms-partner p, .ms-contact-copy > p { color: var(--ms-muted); font-size: 1.04rem; line-height: 1.75; }
 .ms-heading.light, .ms-heading.light p { color: #fff; }
 .ms-heading.light p { color: #b9cbe0; }
@@ -49,11 +49,11 @@
 .ms-glow { border-radius: 999px; filter: blur(25px); }
 .ms-glow-a { width: 540px; height: 540px; inset: -210px auto auto -190px; background: radial-gradient(circle, rgba(48,203,255,.22), transparent 66%); }
 .ms-glow-b { width: 720px; height: 720px; inset: auto -250px -330px auto; background: radial-gradient(circle, rgba(92,82,255,.25), transparent 67%); }
-.ms-hero-layout { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(500px, .97fr); align-items: center; gap: 64px; }
-.ms-hero-copy { max-width: 700px; }
-.ms-hero h1 { max-width: 720px; margin: 22px 0 24px; font-size: clamp(3.45rem, 5.3vw, 5.35rem); line-height: .99; letter-spacing: -.065em; }
-.ms-hero h1 span { color: transparent; background: linear-gradient(100deg, #9cecff 5%, #7ea6ff 55%, #9b83ff 100%); background-clip: text; -webkit-background-clip: text; }
-.ms-hero-copy > p { max-width: 650px; margin: 0; color: #c8d7e8; font-size: clamp(1.03rem, 1.4vw, 1.16rem); line-height: 1.72; }
+.ms-hero-layout { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: center; gap: 34px; }
+.ms-hero-copy { max-width: 630px; }
+.ms-hero h1 { max-width: 620px; margin: 22px 0 24px; font-size: clamp(3.2rem, 4.15vw, 4.55rem); line-height: 1.01; letter-spacing: -.055em; }
+.ms-hero h1 .ms-hero-highlight { display: inline-block; color: transparent; background: linear-gradient(100deg, #9cecff 5%, #7ea6ff 55%, #9b83ff 100%); background-clip: text; -webkit-background-clip: text; }
+.ms-hero-copy > p { max-width: 600px; margin: 0; color: #c8d7e8; font-size: clamp(1.03rem, 1.4vw, 1.16rem); line-height: 1.72; }
 .ms-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .ms-trust { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 24px; color: #bed0e3; font-size: .82rem; font-weight: 780; }
 .ms-trust span { display: inline-flex; align-items: center; gap: 7px; }
