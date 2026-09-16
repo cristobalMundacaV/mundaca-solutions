@@ -1,0 +1,61 @@
+/* Hero product proof (replaces the generic fictitious dashboard) */
+.ms-proof { position: relative; width: 100%; max-width: 610px; margin-left: auto; padding: 22px; border: 1px solid rgba(124,178,255,.24); border-radius: 24px; background: rgba(7,22,40,.86); box-shadow: 0 45px 100px rgba(0,0,0,.38); backdrop-filter: blur(18px); }
+.ms-proof::before { content: ""; position: absolute; inset: -70px; z-index: -1; border: 1px solid rgba(88,146,255,.14); border-radius: 50%; }
+.ms-proof-top { margin-bottom: 18px; color: #9cb4cf; font-size: .66rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.ms-proof-products { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+.ms-proof-card { padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; border: 1px solid rgba(125,174,229,.16); border-radius: 16px; background: rgba(255,255,255,.045); }
+.ms-proof-card img { width: 100%; max-width: 150px; height: auto; object-fit: contain; }
+.ms-proof-card strong { font-size: .92rem; color: #fff; }
+.ms-proof-card small { color: #90a7c0; font-size: .66rem; line-height: 1.4; }
+.ms-proof-flow { margin-top: 16px; padding: 14px 12px; display: flex; align-items: center; justify-content: space-between; gap: 6px; border: 1px solid rgba(125,174,229,.14); border-radius: 14px; background: rgba(255,255,255,.025); color: #506981; }
+.ms-proof-flow span { display: inline-flex; align-items: center; gap: 5px; color: #b9cde0; font-size: .62rem; font-weight: 750; white-space: nowrap; }
+.ms-proof-flow span svg { color: var(--ms-cyan); }
+
+/* Case study — Cafetal (explicitly not a product card) */
+.ms-case { background: #fff; border-top: 1px solid var(--ms-line); border-bottom: 1px solid var(--ms-line); }
+.ms-case-card { padding: 36px; border: 1px dashed #c9d9ef; border-radius: 26px; background: linear-gradient(160deg,#f7faff,#eef4fc); }
+.ms-case-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.ms-case-tag { padding: 7px 13px; color: #2558c5; border: 1px solid #cfe1fb; border-radius: 999px; background: #eef6ff; font-size: .68rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+.ms-case-product { display: inline-flex; align-items: center; gap: 6px; color: var(--ms-muted); font-size: .78rem; font-weight: 750; }
+.ms-case-flow { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ms-case-flow-step { display: flex; align-items: center; gap: 8px; }
+.ms-case-flow-step span { padding: 10px 14px; color: #17335c; border: 1px solid var(--ms-line); border-radius: 12px; background: #fff; font-size: .78rem; font-weight: 800; box-shadow: 0 8px 20px rgba(12,31,58,.05); }
+.ms-case-flow-step svg { color: #9fb4cc; flex: none; }
+.ms-case-tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 7px; }
+.ms-case-tags span { padding: 6px 11px; color: #45536a; border: 1px solid var(--ms-line); border-radius: 999px; background: #fff; font-size: .68rem; font-weight: 750; }
+.ms-case-impact { margin: 22px 0; padding: 15px 16px; display: flex; align-items: flex-start; gap: 10px; color: #17335c; border-radius: 14px; background: rgba(49,212,155,.1); font-size: .88rem; font-weight: 700; line-height: 1.5; }
+.ms-case-impact svg { flex: none; margin-top: 2px; color: #1bab7c; }
+
+/* Thesis — problem-first principle */
+.ms-thesis { color: #fff; background: linear-gradient(135deg,#051120,#0a1930 55%,#171743); }
+.ms-thesis-flow { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.ms-thesis-step { display: flex; align-items: center; gap: 10px; }
+.ms-thesis-step span { padding: 12px 18px; color: #e7f0fb; border: 1px solid rgba(133,185,244,.22); border-radius: 13px; background: rgba(255,255,255,.05); font-size: .82rem; font-weight: 800; }
+.ms-thesis-step svg { color: #6f89a8; flex: none; }
+.ms-thesis-note { margin-top: 28px; text-align: center; }
+.ms-thesis-note p { margin: 0 auto; max-width: 620px; color: #b9cde0; font-size: .96rem; line-height: 1.7; }
+
+/* AI positioning — small, deliberately restrained */
+.ms-ai { padding: 76px 0; background: #f4f7fb; }
+.ms-ai-layout { display: grid; grid-template-columns: 64px 1fr; gap: 26px; align-items: start; max-width: 760px; }
+.ms-ai-icon { width: 56px; height: 56px; display: grid; place-items: center; color: #2d66d4; border: 1px solid #d5e7ff; border-radius: 16px; background: #eef6ff; }
+.ms-ai-copy h2 { margin: 14px 0 12px; font-size: clamp(1.6rem,2.6vw,2.15rem); letter-spacing: -.03em; }
+.ms-ai-copy p { margin: 0; color: var(--ms-muted); font-size: .96rem; line-height: 1.75; }
+
+.ms-cta-booking { margin-top: 22px; align-self: flex-start; }
+
+@media (max-width: 900px) {
+  .ms-proof { max-width: 100%; }
+  .ms-case-card { padding: 26px; }
+  .ms-ai-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .ms-proof-products { grid-template-columns: 1fr; }
+  .ms-proof-flow { flex-wrap: wrap; justify-content: flex-start; }
+  .ms-case-card { padding: 20px; border-radius: 20px; }
+  .ms-case-flow { gap: 6px; }
+  .ms-case-flow-step span { padding: 8px 11px; font-size: .72rem; }
+  .ms-thesis-step span { padding: 10px 14px; font-size: .76rem; }
+  .ms-cta-booking { width: 100%; }
+}

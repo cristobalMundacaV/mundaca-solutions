@@ -10,7 +10,7 @@
 .ms-projects { background: #f4f7fb; }
 .ms-project-list { display: grid; gap: 18px; }
 .ms-project { min-height: 390px; padding: 40px; position: relative; display: grid; grid-template-columns: 1fr .95fr; align-items: center; gap: 55px; overflow: hidden; color: #fff; border-radius: 28px; box-shadow: 0 25px 65px rgba(10,27,52,.12); }
-.ms-project.foodies { background: linear-gradient(125deg,#071d33,#0e5960); }.ms-project.carbon { background: linear-gradient(125deg,#073229,#0d7650); }.ms-project.motos { background: linear-gradient(125deg,#151922,#35405a); }
+.ms-project.foodies { background: linear-gradient(125deg,#071d33,#0e5960); }.ms-project.carbon { background: linear-gradient(125deg,#073229,#0d7650); }
 .ms-project-index { position: absolute; top: 26px; left: 28px; color: rgba(255,255,255,.42); font-size: .7rem; font-weight: 850; }
 .ms-project-copy { padding-left: 52px; }.ms-project-copy > small { color: #7ee8ff; font-size: .67rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
 .ms-project h3 { margin: 18px 0 16px; font-size: clamp(2.5rem,4vw,4.2rem); letter-spacing: -.06em; }.ms-project-copy > p { color: #c6d7e6; line-height: 1.7; }
@@ -23,7 +23,6 @@
 .ms-project-logo { width: min(86%,360px); height: auto; max-height: 150px; object-fit: contain; }
 .ms-project-logo.foodies { width: min(72%,290px); }
 .ms-project-logo.carbon { width: min(88%,370px); }
-.ms-project-logo.motos { width: min(92%,390px); max-height: 145px; }
 .ms-project-logo-link > span { display: inline-flex; align-items: center; gap: 8px; color: #285fca; font-size: .77rem; font-weight: 850; }
 .ms-project-logo-link > span svg { transition: transform .2s ease; }
 .ms-project-logo-link:hover > span svg { transform: translateX(4px); }
