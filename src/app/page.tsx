@@ -9,7 +9,6 @@ import {
   BriefcaseBusiness,
   Check,
   ChevronRight,
-  Gauge,
   Layers3,
   Menu,
   MessageCircle,
@@ -32,6 +31,35 @@ const whatsappUrl =
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "cristobal.mundacav@gmail.com";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mundacasolutions.com";
 const brandLogo = "/logos/mundaca-solutions/logo-mundacas-solutions.png";
+
+const products = [
+  {
+    name: "Carbono Zero",
+    category: "Inteligencia para construcción",
+    text: "Conecta diseño, planificación, materiales, costos, ejecución y desempeño ambiental para entender el proyecto como un solo sistema.",
+    impact: "De reportes aislados a una gestión ambiental continua.",
+    tags: ["Diseño", "Planificación", "CO₂e", "Trazabilidad"],
+    logo: "/logos/carbono-zero/logo-carbono-zero.png",
+    href: "https://carbonozero.mundacasolutions.com",
+    cta: "Conocer Carbono Zero",
+    tone: "carbon",
+  },
+  {
+    name: "Foodies",
+    category: "Operación e inteligencia para negocios",
+    text: "Conecta ventas, caja, inventario y operación para ayudar al negocio a entender qué está pasando y decidir qué hacer después.",
+    impact: "De procesos separados a una gestión visible y coordinada.",
+    tags: ["Ventas", "Caja", "Inventario", "Reportes"],
+    logo: "/logos/foodies/logo-foodies.png",
+    href: "https://foodies.mundacasolutions.com",
+    cta: "Conocer Foodies",
+    tone: "foodies",
+  },
+] as const;
+
+const cafetalFlow = ["Cliente", "Pedido", "Menú", "Preparación", "Despacho", "Pago / Cuenta", "Caja", "Reportes"] as const;
+const cafetalTags = ["Pedidos", "Despacho", "Clientes", "Cuentas", "Caja", "Reportes"] as const;
+const thesisFlow = ["Problema", "Operación", "Datos", "Contexto", "Inteligencia", "Decisión", "Acción", "Resultado"] as const;
 
 const problems = [
   [Layers3, "Información repartida", "Unificamos lo que hoy vive en planillas, mensajes y sistemas separados."],
@@ -64,39 +92,6 @@ const solutions = [
     title: "Decide con información clara",
     text: "Convierte datos dispersos en indicadores útiles para detectar problemas, anticiparte y actuar mejor.",
     bullets: ["Dashboards ejecutivos", "KPIs accionables", "Trazabilidad"],
-  },
-];
-
-const projects = [
-  {
-    name: "Foodies",
-    category: "Gestión de negocios",
-    text: "Ventas, caja, inventario, cocina y reportes conectados en una sola operación.",
-    impact: "De procesos separados a una gestión visible y coordinada.",
-    tags: ["Ventas", "Caja", "Inventario", "Reportes"],
-    logo: "/logos/foodies/logo-foodies.png",
-    href: "https://foodies.mundacasolutions.com",
-    tone: "foodies",
-  },
-  {
-    name: "Carbono Zero",
-    category: "Gestión ambiental",
-    text: "Medición de CO₂e, trazabilidad, alertas y recomendaciones para proyectos de construcción.",
-    impact: "De reportes aislados a una gestión ambiental continua.",
-    tags: ["CO₂e", "Trazabilidad", "Alertas", "Sensores"],
-    logo: "/logos/carbono-zero/logo-carbono-zero.png",
-    href: "https://carbonozero.mundacasolutions.com/",
-    tone: "carbon",
-  },
-  {
-    name: "Delanoe Motos",
-    category: "Experiencia comercial",
-    text: "Catálogo digital, administración y una base preparada para mantención y postventa.",
-    impact: "De vitrina digital a plataforma comercial preparada para crecer.",
-    tags: ["Catálogo", "Gestión", "Clientes", "Postventa"],
-    logo: "/logos/delanoe-motos/logo-delanoe.svg",
-    href: "https://delanoemotos.cl",
-    tone: "motos",
   },
 ];
 
@@ -165,15 +160,15 @@ function Header() {
         </a>
 
         <nav className={`ms-nav ${open ? "is-open" : ""}`} aria-label="Navegación principal">
-          <a href="#soluciones" onClick={() => setOpen(false)}>Soluciones</a>
-          <a href="#proyectos" onClick={() => setOpen(false)}>Proyectos</a>
+          <a href="#productos" onClick={() => setOpen(false)}>Productos</a>
+          <a href="#cafetal" onClick={() => setOpen(false)}>Caso Cafetal</a>
           <a href="#metodo" onClick={() => setOpen(false)}>Cómo trabajamos</a>
           <a href="#contacto" onClick={() => setOpen(false)}>Contacto</a>
         </nav>
 
         <div className="ms-header-actions">
           <a className="ms-button ms-button-header" href={bookingUrl}>
-            Evaluar mi proyecto <ArrowRight size={16} />
+            Conversemos <ArrowRight size={16} />
           </a>
           <button
             className="ms-menu-button"
@@ -190,46 +185,32 @@ function Header() {
   );
 }
 
-function HeroDashboard() {
+function HeroProof() {
   return (
-    <div className="ms-dashboard" aria-hidden="true">
-      <div className="ms-dashboard-top">
-        <span>operación.digital</span>
-        <small><i /> En línea</small>
+    <div className="ms-proof" aria-hidden="true">
+      <div className="ms-proof-top">
+        <span>Ecosistema Mundaca&apos;s Solutions</span>
       </div>
-      <div className="ms-dashboard-main">
-        <aside>
-          <div className="ms-dashboard-brand">
-            <Image src={brandLogo} alt="" width={140} height={30} />
-          </div>
-          <span className="active"><Gauge size={15} /> Resumen</span>
-          <span><Workflow size={15} /> Procesos</span>
-          <span><BarChart3 size={15} /> Reportes</span>
-        </aside>
-        <div className="ms-dashboard-content">
-          <div className="ms-dashboard-title">
-            <small>VISIÓN OPERACIONAL</small>
-            <strong>Todo conectado. Todo visible.</strong>
-          </div>
-          <div className="ms-kpis">
-            <article><span>Procesos</span><strong>Conectados</strong><small>Operación centralizada</small></article>
-            <article><span>Información</span><strong>Al día</strong><small>Sin planillas dispersas</small></article>
-            <article><span>Decisiones</span><strong>Más rápidas</strong><small>Indicadores claros</small></article>
-          </div>
-          <div className="ms-chart">
-            <div><strong>Visibilidad operacional</strong><small>Información disponible para actuar</small></div>
-            <div className="ms-chart-bars"><i /><i /><i /><i /><i /><i /></div>
-          </div>
+      <div className="ms-proof-products">
+        <div className="ms-proof-card carbon">
+          <Image src="/logos/carbono-zero/logo-carbono-zero.png" alt="" width={230} height={96} />
+          <strong>Carbono Zero</strong>
+          <small>Inteligencia para construcción</small>
+        </div>
+        <div className="ms-proof-card foodies">
+          <Image src="/logos/foodies/logo-foodies.png" alt="" width={230} height={96} />
+          <strong>Foodies</strong>
+          <small>Operación e inteligencia para negocios</small>
         </div>
       </div>
-      <div className="ms-float ms-float-one">
-        <Zap size={18} />
-        <span><strong>Menos trabajo manual</strong><small>Procesos automatizados</small></span>
-        <Check size={15} />
-      </div>
-      <div className="ms-float ms-float-two">
-        <BarChart3 size={18} />
-        <span><strong>Más visibilidad</strong><small>Decisiones con contexto</small></span>
+      <div className="ms-proof-flow">
+        <span><Workflow size={13} /> Operación</span>
+        <ChevronRight size={13} />
+        <span><BarChart3 size={13} /> Datos</span>
+        <ChevronRight size={13} />
+        <span><Sparkles size={13} /> Inteligencia</span>
+        <ChevronRight size={13} />
+        <span><Target size={13} /> Decisión</span>
       </div>
     </div>
   );
@@ -238,14 +219,30 @@ function HeroDashboard() {
 export default function Home() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Mundaca's Solutions",
-    legalName: "Mundaca's Solutions SpA",
-    url: siteUrl,
-    email: contactEmail,
-    telephone: "+56 9 6663 5509",
-    areaServed: "Chile",
-    description: "Sistemas y software para conectar procesos, automatizar operaciones y convertir datos en decisiones.",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Mundaca's Solutions",
+        legalName: "Mundaca's Solutions SpA",
+        url: siteUrl,
+        logo: `${siteUrl}${brandLogo}`,
+        email: contactEmail,
+        description:
+          "Compañía de software, datos e inteligencia operacional que construye productos propios y sistemas a medida para conectar procesos, datos e inteligencia.",
+      },
+      {
+        "@type": "ProfessionalService",
+        name: "Mundaca's Solutions",
+        legalName: "Mundaca's Solutions SpA",
+        url: siteUrl,
+        email: contactEmail,
+        telephone: "+56 9 6663 5509",
+        areaServed: "Chile",
+        description:
+          "Diseño y desarrollo de sistemas y software a medida para conectar procesos, automatizar operaciones y convertir datos en decisiones.",
+      },
+    ],
   };
 
   return (
@@ -268,21 +265,22 @@ export default function Home() {
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
             >
               <motion.div className="ms-eyebrow light" variants={reveal}>
-                <Sparkles size={15} /> SOFTWARE PARA EMPRESAS QUE QUIEREN OPERAR MEJOR
+                <Sparkles size={15} /> SOFTWARE · DATOS · INTELIGENCIA OPERACIONAL
               </motion.div>
               <motion.h1 variants={reveal}>
-                Haz que tu empresa opere con <span>claridad, control y velocidad.</span>
+                Convertimos operaciones complejas en <span>sistemas que ayudan a decidir mejor.</span>
               </motion.h1>
               <motion.p variants={reveal}>
-                Diseñamos sistemas que conectan procesos, equipos y datos para reducir trabajo manual,
-                tomar mejores decisiones y crecer sin perder el control.
+                En Mundaca&apos;s Solutions diseñamos productos y software que conectan procesos, datos e
+                inteligencia para resolver problemas reales, automatizar operaciones y convertir información
+                en mejores decisiones.
               </motion.p>
               <motion.div className="ms-hero-actions" variants={reveal}>
                 <a className="ms-button ms-button-primary" href={bookingUrl}>
-                  Evaluar mi proyecto <ArrowRight size={19} />
+                  Conversemos sobre tu operación <ArrowRight size={19} />
                 </a>
-                <a className="ms-button ms-button-ghost" href="#metodo">
-                  Ver cómo trabajamos <ChevronRight size={19} />
+                <a className="ms-button ms-button-ghost" href="#productos">
+                  Conocer nuestros productos <ChevronRight size={19} />
                 </a>
               </motion.div>
               <motion.div className="ms-trust" variants={reveal}>
@@ -292,7 +290,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            <HeroDashboard />
+            <HeroProof />
           </div>
         </section>
 
@@ -303,10 +301,143 @@ export default function Home() {
               <span>Productos y sistemas desarrollados por Mundaca&apos;s Solutions</span>
             </div>
             <nav>
-              <a href="#proyectos"><b>Foodies</b><span>Gestión de negocios</span></a>
-              <a href="#proyectos"><b>Carbono Zero</b><span>Gestión ambiental</span></a>
-              <a href="#proyectos"><b>Delanoe Motos</b><span>Experiencia comercial</span></a>
+              <a href="#productos"><b>Carbono Zero</b><span>Inteligencia para construcción</span></a>
+              <a href="#productos"><b>Foodies</b><span>Operación e inteligencia para negocios</span></a>
             </nav>
+          </div>
+        </section>
+
+        <section className="ms-section ms-projects" id="productos">
+          <div className="ms-container">
+            <Reveal className="ms-heading">
+              <div className="ms-eyebrow">PRODUCTOS</div>
+              <h2>Dos productos, un mismo principio: entender la operación como un sistema.</h2>
+              <p>
+                Construimos software que conecta operación, datos e inteligencia para resolver problemas
+                reales y mejorar decisiones. Carbono Zero y Foodies son la prueba de ese principio aplicado
+                a dos industrias distintas.
+              </p>
+            </Reveal>
+
+            <div className="ms-project-list">
+              {products.map(({ name, category, text, impact, tags, logo, href, cta, tone }, index) => (
+                <Reveal key={name}>
+                  <article className={`ms-project ${tone}`}>
+                    <span className="ms-project-index">0{index + 1}</span>
+                    <div className="ms-project-copy">
+                      <small>{category}</small>
+                      <h3>{name}</h3>
+                      <p>{text}</p>
+                      <strong><Sparkles size={16} /> {impact}</strong>
+                      <div>{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                    </div>
+
+                    <div className="ms-project-visual">
+                      <a
+                        className="ms-project-logo-link"
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={cta}
+                      >
+                        <Image
+                          className={`ms-project-logo ${tone}`}
+                          src={logo}
+                          alt={`Logo de ${name}`}
+                          width={760}
+                          height={320}
+                          sizes="(max-width: 900px) 90vw, 520px"
+                        />
+                        <span>{cta} <ArrowRight size={17} /></span>
+                      </a>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="ms-section ms-case" id="cafetal">
+          <div className="ms-container">
+            <Reveal className="ms-heading centered">
+              <div className="ms-eyebrow">CASO DE APLICACIÓN — CAFETAL</div>
+              <h2>Una operación real convertida en un sistema conectado.</h2>
+              <p>
+                Foodies se adapta al flujo de Cafetal para centralizar clientes, pedidos, menús, despacho,
+                cuentas, pagos, caja e información de gestión en una sola operación.
+              </p>
+            </Reveal>
+
+            <Reveal className="ms-case-card">
+              <div className="ms-case-meta">
+                <span className="ms-case-tag">Operación de alimentación</span>
+                <span className="ms-case-product"><Sparkles size={14} /> Construido sobre Foodies</span>
+              </div>
+
+              <div className="ms-case-flow">
+                {cafetalFlow.map((step, index) => (
+                  <div className="ms-case-flow-step" key={step}>
+                    <span>{step}</span>
+                    {index < cafetalFlow.length - 1 ? <ChevronRight size={15} /> : null}
+                  </div>
+                ))}
+              </div>
+
+              <div className="ms-case-tags">
+                {cafetalTags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+
+              <div className="ms-case-impact">
+                <Check size={16} />
+                <span>De procesos distribuidos a una operación trazable desde la solicitud hasta el cierre.</span>
+              </div>
+
+              <a className="ms-button ms-button-primary" href="https://foodies.mundacasolutions.com" target="_blank" rel="noreferrer">
+                Ver cómo adaptamos Foodies <ArrowRight size={18} />
+              </a>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="ms-section ms-thesis" id="tesis">
+          <div className="ms-container">
+            <Reveal className="ms-heading centered light">
+              <div className="ms-eyebrow light">NUESTRO PRINCIPIO</div>
+              <h2>No empezamos por la tecnología. Empezamos por el problema.</h2>
+            </Reveal>
+
+            <Reveal className="ms-thesis-flow">
+              {thesisFlow.map((step, index) => (
+                <div className="ms-thesis-step" key={step}>
+                  <span>{step}</span>
+                  {index < thesisFlow.length - 1 ? <ChevronRight size={15} /> : null}
+                </div>
+              ))}
+            </Reveal>
+
+            <Reveal className="ms-thesis-note" delay={0.1}>
+              <p>
+                Este es el mismo principio detrás de nuestros productos y de los sistemas que construimos
+                para otras organizaciones.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="ms-section ms-ai" id="ia">
+          <div className="ms-container ms-ai-layout">
+            <Reveal className="ms-ai-icon">
+              <Sparkles size={26} />
+            </Reveal>
+            <Reveal className="ms-ai-copy" delay={0.06}>
+              <div className="ms-eyebrow">INTELIGENCIA ARTIFICIAL</div>
+              <h2>La inteligencia funciona mejor cuando entiende la realidad.</h2>
+              <p>
+                Por eso primero estructuramos procesos, datos, reglas y contexto. La inteligencia
+                artificial viene después: para explicar, relacionar, asistir y acelerar mejores decisiones.
+              </p>
+            </Reveal>
           </div>
         </section>
 
@@ -342,12 +473,13 @@ export default function Home() {
           <div className="ms-container">
             <Reveal className="ms-heading split light">
               <div>
-                <div className="ms-eyebrow light">LO QUE PODEMOS RESOLVER</div>
-                <h2>Tecnología aplicada donde más impacto genera.</h2>
+                <div className="ms-eyebrow light">DESARROLLO A MEDIDA</div>
+                <h2>Cuando las herramientas genéricas no alcanzan, diseñamos el sistema a tu medida.</h2>
               </div>
               <p>
-                No partimos desde una herramienta. Partimos desde el resultado que tu empresa necesita
-                y construimos la solución adecuada.
+                Sistemas operacionales, automatización, plataformas de datos e inteligencia operacional,
+                integraciones y herramientas internas: construimos alrededor de tu realidad, no de una
+                plantilla genérica.
               </p>
             </Reveal>
             <div className="ms-solution-grid">
@@ -365,62 +497,12 @@ export default function Home() {
             <Reveal className="ms-solution-cta">
               <div>
                 <span>¿No sabes todavía qué solución necesitas?</span>
-                <strong>Conversemos sobre el problema. La tecnología viene después.</strong>
+                <strong>Si tu operación tiene un problema que las herramientas genéricas no resuelven, podemos diseñar el sistema alrededor de tu realidad.</strong>
               </div>
               <a className="ms-button ms-button-light" href="#contacto">
                 Revisar mi caso <ArrowRight size={18} />
               </a>
             </Reveal>
-          </div>
-        </section>
-
-        <section className="ms-section ms-projects" id="proyectos">
-          <div className="ms-container">
-            <Reveal className="ms-heading">
-              <div className="ms-eyebrow">PROYECTOS</div>
-              <h2>Soluciones que convierten complejidad en claridad.</h2>
-              <p>
-                Distintas industrias, una misma forma de trabajar: comprender la operación
-                y construir una experiencia útil para quienes la usan todos los días.
-              </p>
-            </Reveal>
-
-            <div className="ms-project-list">
-              {projects.map(({ name, category, text, impact, tags, logo, href, tone }, index) => (
-                <Reveal key={name}>
-                  <article className={`ms-project ${tone}`}>
-                    <span className="ms-project-index">0{index + 1}</span>
-                    <div className="ms-project-copy">
-                      <small>{category}</small>
-                      <h3>{name}</h3>
-                      <p>{text}</p>
-                      <strong><Sparkles size={16} /> {impact}</strong>
-                      <div>{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                    </div>
-
-                    <div className="ms-project-visual">
-                      <a
-                        className="ms-project-logo-link"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`Visitar ${name}`}
-                      >
-                        <Image
-                          className={`ms-project-logo ${tone}`}
-                          src={logo}
-                          alt={`Logo de ${name}`}
-                          width={760}
-                          height={320}
-                          sizes="(max-width: 900px) 90vw, 520px"
-                        />
-                        <span>Visitar proyecto <ArrowRight size={17} /></span>
-                      </a>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -496,16 +578,19 @@ export default function Home() {
           <div className="ms-container ms-contact-layout">
             <Reveal className="ms-contact-copy">
               <div className="ms-eyebrow light">HABLEMOS DE TU OPERACIÓN</div>
-              <h2>Cuéntanos qué está frenando hoy a tu empresa.</h2>
+              <h2>Todo gran sistema comienza entendiendo correctamente el problema.</h2>
               <p>
-                Revisaremos el contexto, el impacto y la mejor forma de avanzar.
-                La primera conversación es para entender el problema, no para venderte una solución genérica.
+                Cuéntanos qué está ocurriendo en tu operación. Revisaremos el contexto antes de conversar
+                para que la primera reunión empiece donde realmente importa.
               </p>
               <div className="ms-contact-points">
                 <span><Check size={16} /> Diagnóstico enfocado en tu realidad</span>
                 <span><Check size={16} /> Evaluación honesta de viabilidad</span>
                 <span><Check size={16} /> Próximos pasos claros</span>
               </div>
+              <a className="ms-button ms-button-light ms-cta-booking" href={bookingUrl}>
+                Agendar conversación <ArrowRight size={18} />
+              </a>
               <a className="ms-direct" href={whatsappUrl} target="_blank" rel="noreferrer">
                 <MessageCircle size={22} />
                 <span><small>¿Prefieres conversar directamente?</small><strong>Estamos a un mensaje de distancia.</strong></span>
@@ -529,17 +614,17 @@ export default function Home() {
             <a className="ms-brand" href="#inicio">
               <Image src={brandLogo} alt="Mundaca's Solutions" width={390} height={82} />
             </a>
-            <p>Sistemas digitales para empresas que necesitan operar con más claridad, control y capacidad de crecer.</p>
+            <p>Software, datos e inteligencia operacional para empresas que necesitan operar con más claridad, control y capacidad de crecer.</p>
           </div>
           <nav>
             <strong>Explorar</strong>
-            <a href="#soluciones">Soluciones</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href="#productos">Productos</a>
+            <a href="#cafetal">Caso Cafetal</a>
             <a href="#metodo">Cómo trabajamos</a>
           </nav>
           <nav>
             <strong>Contacto</strong>
-            <a href="#contacto">Evaluar mi proyecto</a>
+            <a href={bookingUrl}>Agendar conversación</a>
             <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
             <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
           </nav>

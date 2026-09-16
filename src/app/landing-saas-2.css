@@ -31,7 +31,7 @@
 .ms-evidence-inner { min-height: 112px; display: grid; grid-template-columns: 1fr 1.5fr; align-items: center; gap: 40px; }
 .ms-evidence-inner > div { display: flex; flex-direction: column; gap: 5px; }
 .ms-evidence-inner > div strong { font-size: .92rem; }.ms-evidence-inner > div span { color: var(--ms-muted); font-size: .76rem; }
-.ms-evidence nav { display: grid; grid-template-columns: repeat(3,1fr); }
+.ms-evidence nav { display: grid; grid-template-columns: repeat(2,1fr); }
 .ms-evidence a { min-height: 70px; padding: 13px 22px; display: flex; flex-direction: column; justify-content: center; gap: 4px; border-left: 1px solid var(--ms-line); }
 .ms-evidence b { font-size: .88rem; }.ms-evidence a span { color: var(--ms-muted); font-size: .69rem; }
 
