@@ -266,7 +266,7 @@ export default function Home() {
         telephone: "+56 9 6663 5509",
         areaServed: "Chile",
         description:
-            "Diseño y desarrollo de productos y software a medida que conectan operación, datos e inteligencia para automatizar procesos, aumentar el control y mejorar decisiones.",
+          "Diseño y desarrollo de productos y software a medida que conectan operación, datos e inteligencia para automatizar procesos, aumentar el control y mejorar decisiones.",
       },
     ],
   };
