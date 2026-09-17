@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { Breadcrumbs, PageHeader, siteUrl } from "../seo-content";
+const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contacto@mundacasolutions.com";
+export const metadata: Metadata = { title: "Contacto", description: "Conversemos sobre el problema operativo, producto o sistema que necesitas resolver con Mundaca's Solutions.", alternates: { canonical: `${siteUrl}/contacto` } };
+export default function Page() { return <main className="seo-page"><div className="seo-shell"><Breadcrumbs current="Contacto" section="Inicio" sectionHref="/" /><PageHeader eyebrow="CONTACTO" title="Cuéntanos qué necesitas resolver" description="Una primera conversación sirve para entender el contexto, la prioridad y el siguiente paso más útil para tu empresa." /><section className="seo-section"><div className="seo-card"><h2>Hablemos de tu operación</h2><p>Si buscas software a medida, automatización o quieres conocer nuestros productos, escríbenos con una breve descripción del problema.</p><a className="seo-cta" href={`mailto:${contactEmail}`}>{contactEmail}</a></div></section></div></main>; }
