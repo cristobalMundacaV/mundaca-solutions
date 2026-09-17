@@ -41,6 +41,7 @@ const products = [
     tags: ["Diseño", "Planificación", "CO₂e", "Trazabilidad"],
     logo: "/logos/carbono-zero/logo-carbono-zero.png",
     href: "https://carbonozero.mundacasolutions.com",
+    hubHref: "/productos/carbono-zero",
     cta: "Conocer Carbono Zero",
     tone: "carbon",
   },
@@ -52,6 +53,7 @@ const products = [
     tags: ["Ventas", "Caja", "Inventario", "Reportes"],
     logo: "/logos/foodies/logo-foodies.png",
     href: "https://foodies.mundacasolutions.com",
+    hubHref: "/productos/foodies",
     cta: "Conocer Foodies",
     tone: "foodies",
   },
@@ -175,7 +177,7 @@ function Header() {
         </a>
 
         <nav className={`ms-nav ${open ? "is-open" : ""}`} aria-label="Navegación principal">
-          <a href="#productos" onClick={() => setOpen(false)}>Productos</a>
+          <a href="/productos" onClick={() => setOpen(false)}>Productos</a>
           <a href="#cafetal" onClick={() => setOpen(false)}>Caso Cafetal</a>
           <a href="#metodo" onClick={() => setOpen(false)}>Cómo trabajamos</a>
           <a href="#contacto" onClick={() => setOpen(false)}>Contacto</a>
@@ -325,8 +327,8 @@ export default function Home() {
               <span>Carbono Zero y Foodies aplican el mismo principio en operaciones diferentes.</span>
             </div>
             <nav>
-              <a href="#productos"><b>Carbono Zero</b><span>Inteligencia para construcción</span></a>
-              <a href="#productos"><b>Foodies</b><span>Operación e inteligencia para negocios</span></a>
+                <a href="/productos/carbono-zero"><b>Carbono Zero</b><span>Inteligencia para construcción</span></a>
+                  <a href="/productos/foodies"><b>Foodies</b><span>Operación e inteligencia para negocios</span></a>
             </nav>
           </div>
         </section>
@@ -344,7 +346,7 @@ export default function Home() {
             </Reveal>
 
             <div className="ms-project-list">
-              {products.map(({ name, category, text, impact, tags, logo, href, cta, tone }, index) => (
+              {products.map(({ name, category, text, impact, tags, logo, href, hubHref, cta, tone }, index) => (
                 <Reveal key={name}>
                   <article className={`ms-project ${tone}`}>
                     <span className="ms-project-index">0{index + 1}</span>
@@ -357,13 +359,7 @@ export default function Home() {
                     </div>
 
                     <div className="ms-project-visual">
-                      <a
-                        className="ms-project-logo-link"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={cta}
-                      >
+                      <a className="ms-project-logo-link" href={hubHref} aria-label={`Conocer el producto ${name}`}>
                         <Image
                           className={`ms-project-logo ${tone}`}
                           src={logo}
@@ -372,8 +368,9 @@ export default function Home() {
                           height={320}
                           sizes="(max-width: 900px) 90vw, 520px"
                         />
-                        <span>{cta} <ArrowRight size={17} /></span>
+                        <span>Ver la página de {name} <ArrowRight size={17} /></span>
                       </a>
+                      <a className="ms-project-external-link" href={href} target="_blank" rel="noreferrer">{cta} <ArrowRight size={15} /></a>
                     </div>
                   </article>
                 </Reveal>
@@ -643,7 +640,10 @@ export default function Home() {
           </div>
           <nav>
             <strong>Explorar</strong>
-            <a href="#productos">Productos</a>
+            <a href="/productos">Productos</a>
+            <a href="/productos/foodies">Foodies</a>
+            <a href="/productos/carbono-zero">Carbono Zero</a>
+            <a href="/soluciones/software-a-medida">Software a medida</a>
             <a href="#cafetal">Caso Cafetal</a>
             <a href="#metodo">Cómo trabajamos</a>
           </nav>
@@ -657,6 +657,11 @@ export default function Home() {
             <strong>Legal</strong>
             <a href="/privacidad">Privacidad</a>
             <a href="/terminos">Términos</a>
+          </nav>
+          <nav>
+            <strong>Empresa</strong>
+            <a href="/contacto">Contacto</a>
+            <a href="/conocimiento">Conocimiento</a>
           </nav>
         </div>
         <div className="ms-container ms-footer-bottom">

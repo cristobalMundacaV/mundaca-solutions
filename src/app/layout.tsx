@@ -8,6 +8,7 @@ import "./landing-saas-3.css";
 import "./landing-saas-4.css";
 import "./landing-saas-5.css";
 import "./landing-saas-6.css";
+import "./seo-pages.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -100,9 +101,33 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const entitySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Mundaca's Solutions SpA",
+        url: siteUrl,
+        logo: `${siteUrl}/logos/mundaca-solutions/logo-mundaca-solutions.png`,
+        description: "Empresa de software y productos tecnológicos para operaciones reales.",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Mundaca's Solutions",
+        publisher: { "@id": `${siteUrl}/#organization` },
+      },
+    ],
+  };
+
   return (
     <html lang="es" className={`${inter.variable} ${manrope.variable}`}>
-      <body><PageTransition>{children}</PageTransition></body>
+      <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(entitySchema) }} />
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   );
 }
